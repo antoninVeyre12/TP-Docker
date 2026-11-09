@@ -47,3 +47,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 
+5 - Lister les conteneurs en cours d'exécution
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
