@@ -56,3 +56,9 @@ PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\
 CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
 a6215f313d42   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago             tender_franklin
 
+7 - Supprimer un conteneur
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker rm a6215f313d42
+a6215f313d42
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
