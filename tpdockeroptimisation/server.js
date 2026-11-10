@@ -4,26 +4,35 @@ const path = require('path');
 
 const app = express();
 
-// Middleware verbeux et un peu inutile
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello world — serveur volontairement non optimisé mais fonctionnel');
+  res.send('Hello world — serveur avec stream');
 });
 
+// Modifications V2 (Points 1, 2) + V1 (Point 3)
 app.get('/big', (req, res) => {
   const filePath = path.join(__dirname, 'maybe-big-file.txt');
-  if (fs.existsSync(filePath)) {
-    const data = fs.readFileSync(filePath, 'utf8');
-    // Modification V1 (Point 3) : forcer le type texte brut pour empêcher l'exécution de code XSS
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.send(data.replace(/\n/g, '<br/>'));
-  } else {
-    res.send('Fichier introuvable');
-  }
+
+  // Lecture par flux : non bloquante et protège la RAM
+  const stream = fs.createReadStream(filePath, { encoding: 'utf8' });
+
+  // Sécurité XSS (V1)
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+
+  stream.on('error', (err) => {
+    if (err.code === 'ENOENT') {
+      res.status(404).send('Fichier introuvable');
+    } else {
+      res.status(500).send('Erreur lors de la lecture du fichier');
+    }
+  });
+
+  // Envoi progressif des morceaux au client
+  stream.pipe(res);
 });
 
 const PORT = process.env.PORT || 3000;
