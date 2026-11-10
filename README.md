@@ -145,3 +145,34 @@ docker run -d -p 5000:5000 hello-world
 Tester votre application depuis votre navigateur : 
 ![Texte alternatif](images/resultat_hello_world.png)
 
+
+# Exercice utilisation docker compose
+
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker compose up -d --build
+[+] Building 1.7s (12/12) FINISHED                                                                                                  
+ => [internal] load local bake definitions                                                                                     0.0s
+ => => reading from stdin 631B                                                                                                 0.0s
+ => [internal] load build definition from Dockerfile                                                                           0.0s
+ => => transferring dockerfile: 225B                                                                                           0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                            0.8s
+ => [internal] load .dockerignore                                                                                              0.0s
+ => => transferring context: 2B                                                                                                0.0s
+ => [1/5] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535      0.0s
+ => [internal] load build context                                                                                              0.0s
+ => => transferring context: 63B                                                                                               0.0s
+ => CACHED [2/5] WORKDIR /app                                                                                                  0.0s
+ => CACHED [3/5] COPY requirements.txt .                                                                                       0.0s
+ => CACHED [4/5] RUN pip install --no-cache-dir -r requirements.txt                                                            0.0s
+ => CACHED [5/5] COPY app.py .                                                                                                 0.0s
+ => exporting to image                                                                                                         0.0s
+ => => exporting layers                                                                                                        0.0s
+ => => writing image sha256:af47c1b20ce39d6ad1dd3dca503b87c4084797d5b2e7420e3da458dbfd5a564e                                   0.0s
+ => => naming to docker.io/library/tp-docker-web                                                                               0.0s
+ => resolving provenance for metadata file                                                                                     0.0s
+[+] up 4/4
+ ✔ Image tp-docker-web         Built                                                                                            2.1s
+ ✔ Network tp-docker_default   Created                                                                                          0.0s
+ ✔ Container tp-docker-mongo-1 Started                                                                                          0.5s
+ ✔ Container tp-docker-web-1   Started   
+
+ ![Texte alternatif](images/resultat_exercice_docker_compose.png)
