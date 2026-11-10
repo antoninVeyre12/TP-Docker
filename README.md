@@ -111,6 +111,11 @@ Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to
 PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker stop mon_nginx 
 mon_nginx
 
+6 - Supprimer le conteneur
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker rm mon_nginx
+mon_nginx
+
+
 # Exercice création d'une application python flask
 
 Génération de l'image : 
@@ -139,3 +144,4 @@ docker run -d -p 5000:5000 hello-world
 
 Tester votre application depuis votre navigateur : 
 ![Texte alternatif](images/resultat_hello_world.png)
+
