@@ -111,3 +111,26 @@ Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to
 PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker stop mon_nginx 
 mon_nginx
 
+# Exercice création d'une application python flask
+
+Génération de l'image : 
+docker build -t hello-world .
+[+] Building 6.8s (10/10) FINISHED                                                                             docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                           0.0s
+ => => transferring dockerfile: 225B                                                                                           0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                            1.2s
+ => [internal] load .dockerignore                                                                                              0.0s
+ => => transferring context: 2B                                                                                                0.0s
+ => [internal] load build context                                                                                              0.0s
+ => => transferring context: 78B                                                                                               0.0s
+ => [1/5] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535      0.0s
+ => CACHED [2/5] WORKDIR /app                                                                                                  0.0s
+ => [3/5] COPY requirements.txt .                                                                                              0.0s
+ => [4/5] RUN pip install --no-cache-dir -r requirements.txt                                                                   5.0s
+ => [5/5] COPY app.py .                                                                                                        0.1s
+ => exporting to image                                                                                                         0.3s
+ => => exporting layers                                                                                                        0.2s
+ => => writing image sha256:0ff7ffb2340f13b643bc629da45b18f851f3e3313d04f444fb2b84916f4d3b3f                                   0.0s
+ => => naming to docker.io/library/hello-world                      
+
+ 
