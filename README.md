@@ -107,3 +107,6 @@ d3c0eb105c0e   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entryp
 4 - Accèder à la page dans votre navigateur pour voir la page par défaut de nginx
 Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to Nginx!" 
 
+5 - Arrêter le conteneur
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker stop mon_nginx 
+mon_nginx
