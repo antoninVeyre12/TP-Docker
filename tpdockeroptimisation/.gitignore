@@ -1,0 +1,10 @@
+# Dépendances Node.js
+node_modules/
+
+# Fichiers de configuration / manifestes de dépendances
+package.json
+package-lock.json
+
+# Lockfiles alternatifs (optionnel mais recommandé)
+yarn.lock
+pnpm-lock.yaml
