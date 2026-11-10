@@ -110,3 +110,4 @@ Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to
 5 - Arrêter le conteneur
 PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker stop mon_nginx 
 mon_nginx
+
