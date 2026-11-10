@@ -93,3 +93,14 @@ PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\
 2447d70842980df401d6d3348dc01c25088c621887c8c31dd05ec0338ee1186a
 
 Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to Nginx!" 
+
+3 - Vérifier que le conteneur est actif
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker ps
+CONTAINER ID   IMAGE                                                    COMMAND                  CREATED         STATUS       PORTS                                                                                      NAMES
+2447d7084298   nginx                                                    "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes       0.0.0.0:8080->80/tcp, [::]:8080->80/tcp                                                    mon_nginx
+1f9937bd1bc3   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8042/tcp                                                                                   nodemanager
+8f8dc2354772   bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 0.0.0.0:9870->9870/tcp, [::]:9870->9870/tcp   namenode
+149d964aca2d   bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8188/tcp                                                                                   historyserver
+69dbd6e21ac5   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8088/tcp                                                                                   resourcemanager
+d3c0eb105c0e   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   9864/tcp             
+
