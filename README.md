@@ -88,3 +88,8 @@ Digest: sha256:165ddde8751e75a1c907d24ef10d9f6deb08b57e0fe56caf67512486aff76d82
 Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
 
+2 - Lancer un conteneur nginx en arrière plan
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker run -d -p 8080:80 --name mon_nginx nginx
+2447d70842980df401d6d3348dc01c25088c621887c8c31dd05ec0338ee1186a
+
+Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to Nginx!" 
