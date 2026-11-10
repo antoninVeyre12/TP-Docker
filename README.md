@@ -134,3 +134,8 @@ docker build -t hello-world .
  => => naming to docker.io/library/hello-world                      
 
  
+Lancer le conteneur : 
+docker run -d -p 5000:5000 hello-world
+
+Tester votre application depuis votre navigateur : 
+![Texte alternatif](images/resultat_hello_world.png)
