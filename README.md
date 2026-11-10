@@ -71,3 +71,42 @@ Deleted: sha256:897b3f2a7c1bc2f3d02432f7892fe31c6272c521ad4d70257df624504a3238b4
 PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker images
 IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
 
+# Exercice : Création de serveur web avec Docker
+
+1 - Télécharger l'image officielle nginx
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+37fb86c2a767: Pull complete 
+512ac5e7ce8e: Pull complete 
+1724c05f72c6: Pull complete 
+bbb080c71d50: Pull complete 
+1962e1ff75b4: Pull complete 
+7cb4701ce7cd: Pull complete 
+6d2e43921e9e: Pull complete 
+Digest: sha256:165ddde8751e75a1c907d24ef10d9f6deb08b57e0fe56caf67512486aff76d82
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+2 - Lancer un conteneur nginx en arrière plan
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker run -d -p 8080:80 --name mon_nginx nginx
+2447d70842980df401d6d3348dc01c25088c621887c8c31dd05ec0338ee1186a
+
+Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to Nginx!" 
+
+3 - Vérifier que le conteneur est actif
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker ps
+CONTAINER ID   IMAGE                                                    COMMAND                  CREATED         STATUS       PORTS                                                                                      NAMES
+2447d7084298   nginx                                                    "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes       0.0.0.0:8080->80/tcp, [::]:8080->80/tcp                                                    mon_nginx
+1f9937bd1bc3   bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8       "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8042/tcp                                                                                   nodemanager
+8f8dc2354772   bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 0.0.0.0:9870->9870/tcp, [::]:9870->9870/tcp   namenode
+149d964aca2d   bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8     "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8188/tcp                                                                                   historyserver
+69dbd6e21ac5   bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8   "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   8088/tcp                                                                                   resourcemanager
+d3c0eb105c0e   bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8          "/entrypoint.sh /run…"   22 hours ago    Up 51 minutes (healthy)   9864/tcp             
+
+4 - Accèder à la page dans votre navigateur pour voir la page par défaut de nginx
+Résulat -> La page http://localhost:8080/ est accessible et affcihe "Welcome to Nginx!" 
+
+5 - Arrêter le conteneur
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker stop mon_nginx 
+mon_nginx
