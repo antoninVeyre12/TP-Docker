@@ -71,3 +71,20 @@ Deleted: sha256:897b3f2a7c1bc2f3d02432f7892fe31c6272c521ad4d70257df624504a3238b4
 PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker images
 IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
 
+# Exercice : Création de serveur web avec Docker
+
+1 - Télécharger l'image officielle nginx
+PS C:\Users\anton\Documents\M2 MIAGE IPM\Integration et deploiement continus\TP\TP-Docker> docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+37fb86c2a767: Pull complete 
+512ac5e7ce8e: Pull complete 
+1724c05f72c6: Pull complete 
+bbb080c71d50: Pull complete 
+1962e1ff75b4: Pull complete 
+7cb4701ce7cd: Pull complete 
+6d2e43921e9e: Pull complete 
+Digest: sha256:165ddde8751e75a1c907d24ef10d9f6deb08b57e0fe56caf67512486aff76d82
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
